@@ -1,5 +1,5 @@
 # AnalyticsDecorator
-Angular decorator to use to track user actions - Google analytics via Firebase, Facebook via pixel code
+Angular decorator to use to track user actions - Google analytics via Firebase, Facebook via pixel code (included via script tags in index.html).
 
 
 Code: 
@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 
 
 declare var fbq;
+// obviously if you want to use google stuff via gtag here instead of firebase, include it in index.html and replace firebase stuff below
 
 export function GoogleAnalytics(options: string = 'no_page', additionalString: string = ''): any {
 
