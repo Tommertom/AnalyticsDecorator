@@ -17,6 +17,7 @@ export function GoogleAnalytics(options: string = 'no_page', additionalString: s
   const logToAnalytics = (logString: string) => {
     console.warn(logString);
 
+    // we only track in production
     if (environment.production) {
       setTimeout(() => {
 
@@ -29,7 +30,7 @@ export function GoogleAnalytics(options: string = 'no_page', additionalString: s
           fbq('trackCustom', logString);
         }
 
-      }, 100);
+      }, 100);  // a timeout to not block the main loop with the calls to external serves (Google/Facebook)
     }
   };
 
@@ -85,4 +86,4 @@ import { GoogleAnalytics } from 'src/app/decorators/ga';
 GoogleAnalytics('login', 'version_' + this.version)();
 
 ```
-Don't forget the close `()`!!
+Don't forget the closing `()`!!
