@@ -74,7 +74,7 @@ import { GoogleAnalytics } from 'src/app/decorators/ga';
     this.modalCtrl.dismiss({ action: { cancel: false, name: this.name, email: this.email, code: '' } });
   }
 ```
-This will track "closeForWaitingList" combined with "contactseller" in the analytics tools.
+This will create an event "closeForWaitingList" combined with "contactseller" in the analytics tools.
 
 Or as a function call:
 
